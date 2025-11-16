@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block policy pages from indexing
+Disallow: /privacy.html
+Disallow: /affiliate-disclosure.html
+
+Sitemap: https://hylaronic.com/sitemap.xml
