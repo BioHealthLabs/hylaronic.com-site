@@ -35,45 +35,183 @@
     "name": "Top hyaluronic acid serums",
     "url": "https://hylaronic.com/",
     "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "CeraVe Hydrating Hyaluronic Acid Serum",
-        "url": "https://hylaronic.com/#cerave-ha"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "The Ordinary Hyaluronic Acid 2% + B5",
-        "url": "https://hylaronic.com/#ordinary-ha"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "La Roche-Posay Hyalu B5 Serum",
-        "url": "https://hylaronic.com/#lrp-hyalu-b5"
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "name": "Vichy Minéral 89 Hyaluronic Acid Booster",
-        "url": "https://hylaronic.com/#vichy-89"
-      }
+      { "@type": "ListItem", "position": 1, "name": "CeraVe Hydrating Hyaluronic Acid Serum", "url": "https://hylaronic.com/#cerave-ha" },
+      { "@type": "ListItem", "position": 2, "name": "The Ordinary Hyaluronic Acid 2% + B5", "url": "https://hylaronic.com/#ordinary-ha" },
+      { "@type": "ListItem", "position": 3, "name": "La Roche-Posay Hyalu B5 Serum", "url": "https://hylaronic.com/#lrp-hyalu-b5" },
+      { "@type": "ListItem", "position": 4, "name": "Vichy Minéral 89 Hyaluronic Acid Booster", "url": "https://hylaronic.com/#vichy-89" }
     ]
   }
   </script>
 
   <link rel="stylesheet" href="/styles.css" />
+
+  <!-- Page-specific additions (safe + isolated) -->
+  <style>
+    /* ===== Above-the-fold clarity + CTR helpers ===== */
+    .hero-cta-row{
+      margin: 14px 0 4px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .hero-cta-row a{
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.92rem;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,0.10);
+      background:rgba(15,23,42,0.03);
+    }
+    .hero-cta-row a:hover{
+      border-color:rgba(59,130,246,0.35);
+      background:rgba(59,130,246,0.06);
+    }
+
+    .affiliate-note{
+      margin-top:10px;
+      font-size:0.92rem;
+      color:rgba(15,23,42,0.70);
+      line-height:1.45;
+    }
+
+    /* ===== Compact sticky jump nav (NOT a sticky header) ===== */
+    .jump-nav{
+      position: sticky;
+      top: 10px;
+      z-index: 50;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(15,23,42,0.10);
+      border-radius: 999px;
+      padding: 10px 12px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 10px 0 18px;
+    }
+    .jump-nav a{
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.92rem;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,0.10);
+      background:rgba(15,23,42,0.03);
+      white-space:nowrap;
+    }
+    .jump-nav a:hover{
+      border-color:rgba(59,130,246,0.35);
+      background:rgba(59,130,246,0.06);
+    }
+    .anchor-offset{ scroll-margin-top: 90px; }
+
+    @media (max-width: 560px){
+      .jump-nav{ top: 6px; padding: 8px 10px; gap: 8px; }
+      .jump-nav a{ font-size: 0.88rem; padding: 7px 10px; }
+    }
+
+    /* ===== Quick picks (above table) ===== */
+    .quick-picks{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap:16px;
+      margin: 18px 0 22px;
+    }
+    .quick-pick-card{
+      border: 1px solid rgba(15,23,42,0.10);
+      border-radius: 16px;
+      padding: 14px 14px 16px;
+      background:#fff;
+    }
+    .quick-pick-card h3{ margin:0 0 6px; font-size:1.02rem; }
+    .quick-pick-card p{
+      margin:0 0 12px;
+      color: rgba(15,23,42,0.70);
+      font-size:0.95rem;
+      line-height:1.45;
+    }
+    .quick-pick-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    /* Make sure CTA buttons align nicely in table */
+    .buy-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .buy-col .btn-primary,
+    .buy-col .btn-secondary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      white-space:nowrap;
+    }
+    .buy-col .offer-sub{
+      display:block;
+      font-size:0.82rem;
+      opacity:0.72;
+      margin-top:6px;
+    }
+
+    /* Authority routing (education node) */
+    .authority-box{
+      border:1px solid rgba(15,23,42,0.10);
+      border-radius:18px;
+      padding:16px;
+      background: rgba(59,130,246,0.04);
+      margin: 18px 0 22px;
+    }
+    .authority-box h2{ margin:0 0 6px; }
+    .authority-box p{ margin:0 0 12px; color: rgba(15,23,42,0.72); }
+    .authority-links{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .authority-links a{ text-decoration:none; }
+
+    /* Optional: smaller “View offer” fallback button if styles.css uses btn-compare */
+    .btn-compare{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,0.10);
+      background: rgba(15,23,42,0.03);
+      text-decoration:none;
+      font-weight:800;
+      gap:8px;
+      white-space:nowrap;
+    }
+    .btn-compare:hover{
+      border-color:rgba(59,130,246,0.35);
+      background:rgba(59,130,246,0.06);
+    }
+
+    /* Tighten footer layout consistency */
+    footer.site-footer{
+      display:block;
+    }
+    footer.site-footer .footer-links{
+      display:block;
+      margin-top:10px;
+    }
+  </style>
 </head>
+
 <body>
 <div class="page">
 
   <header>
     <div class="brand">
       <div class="brand-name">Hylaronic.com</div>
-      <div class="brand-tagline">
-        Independent reviews of the world’s leading hyaluronic acid serums.
-      </div>
+      <div class="brand-tagline">Independent reviews of the world’s leading hyaluronic acid serums.</div>
     </div>
     <div class="trust-tags">
       <span class="trust-tag">No sponsorships</span>
@@ -88,250 +226,458 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div>
         <h1 id="hero-heading" class="hero-title">
-          Find the right hyaluronic acid serum for deep, long-lasting hydration.
+          Find the right hyaluronic acid serum for your skin — without sticky hype.
         </h1>
 
         <p class="hero-subtitle">
-          We read the ingredient lists, derm-reviews and real customer feedback so you don’t have to.
-          Compare textures, supporting ingredients and price per ml in one place.
+          We compare hydration performance, texture, supporting ingredients and value so you can choose a serum
+          that actually makes skin feel comfortable — not just glossy for 10 minutes.
         </p>
 
         <ul class="hero-list">
-          <li>See which serums are best for dehydrated, tight or flaky skin.</li>
-          <li>Understand the difference between low-, mid- and high-weight hyaluronic acid.</li>
-          <li>Spot red flags like sticky film, heavy fragrance and drying alcohols.</li>
+          <li>Best picks for dehydrated, tight or flaky skin.</li>
+          <li>Low vs high molecular weight HA — what it changes (and what it doesn’t).</li>
+          <li>Common mistakes: applying on dry skin, skipping moisturiser, over-layering.</li>
         </ul>
 
         <div class="hero-highlight">
-          Our goal is simple: help you pick a hydrating serum that actually plumps and comforts your skin –
-          not just something that sounds nice on the label.
+          Fast rule: apply HA on slightly damp skin, then seal it with moisturiser. Otherwise it can feel sticky or “drying”.
         </div>
+
+        <!-- Micro-CTA row (high CTR, low spam) -->
+        <nav class="hero-cta-row" aria-label="Quick guides">
+          <a href="#picks" data-track="jump" data-placement="hero_cta" data-label="to_picks">Best picks</a>
+          <a href="#compare" data-track="jump" data-placement="hero_cta" data-label="to_table">Comparison table</a>
+          <a href="/hyaluronic-guide.html" data-track="internal" data-placement="hero_cta" data-label="guide_basics">HA guide</a>
+          <a href="/hyaluronic-vs-glycerin.html" data-track="internal" data-placement="hero_cta" data-label="ha_vs_glycerin">HA vs glycerin</a>
+          <a href="/side-effects.html" data-track="internal" data-placement="hero_cta" data-label="mistakes">Mistakes</a>
+        </nav>
+
+        <p class="affiliate-note">
+          Disclosure: This site is reader-supported. If you buy via links here, we may earn a commission — at no extra cost to you.
+          Rankings are independent and not for sale.
+        </p>
       </div>
 
       <aside class="hero-aside">
         <div class="rating-pill">
           <span class="star">★</span>
-          Most popular: <strong>Lightweight daily serums</strong>
+          Most popular: <strong>Lightweight daily hydration</strong>
         </div>
         <p class="hero-note">
-          For most people, a simple hyaluronic acid serum under a moisturiser is enough.
-          Apply on slightly damp skin, then seal it in with cream.
+          For most people, HA works best as a simple layer under moisturiser. If you’re in a dry climate,
+          sealing matters even more.
         </p>
-        <a href="#compare" class="btn-primary">
-          Compare top hyaluronic serums
-          <span class="chevron">›</span>
+        <a href="#compare" class="btn-primary" data-track="jump" data-placement="hero" data-label="to_table">
+          Compare top hyaluronic serums <span class="chevron">›</span>
         </a>
       </aside>
     </section>
 
+    <!-- Authority routing (education node) -->
+    <section class="authority-box" aria-labelledby="authority-heading">
+      <h2 id="authority-heading">Want the science, not shopping?</h2>
+      <p>
+        If you want ingredient education (mechanism, irritation myths, routine design), use our “authority node”
+        at Hyaluronic.bio. Then come back here when you’re ready to compare products.
+      </p>
+      <div class="authority-links">
+        <a class="btn-secondary" href="https://hyaluronic.bio" target="_blank" rel="noopener"
+           data-track="outbound" data-placement="authority" data-label="hyaluronic_bio_home">
+          Hyaluronic.bio overview
+        </a>
+        <a class="btn-secondary" href="https://hyaluronic.bio" target="_blank" rel="noopener"
+           data-track="outbound" data-placement="authority" data-label="hyaluronic_bio_education">
+          Ingredient education
+        </a>
+      </div>
+    </section>
+
+    <!-- QUICK PICKS (affiliate-forward but tasteful) -->
+    <section id="picks" class="quick-picks anchor-offset" aria-label="Quick picks">
+      <div class="quick-pick-card">
+        <h3>Quick pick: Best for dry/tight skin</h3>
+        <p>Barrier-friendly feel with supportive ingredients. Lowest-regret choice for many.</p>
+        <div class="quick-pick-links">
+          <a class="btn-primary" href="#cerave-ha" data-track="jump" data-placement="quick_picks" data-label="cerave_row">See pick <span class="chevron">›</span></a>
+          <a class="btn-secondary" href="https://amzn.to/3XDAKmh" target="_blank" rel="nofollow sponsored noopener"
+             data-track="affiliate" data-product="cerave_ha" data-destination="amazon" data-placement="quick_picks">
+            Check price
+          </a>
+        </div>
+      </div>
+
+      <div class="quick-pick-card">
+        <h3>Quick pick: Best budget</h3>
+        <p>Strong value per ml. Simple hydration layer if you tolerate the texture.</p>
+        <div class="quick-pick-links">
+          <a class="btn-primary" href="#ordinary-ha" data-track="jump" data-placement="quick_picks" data-label="ordinary_row">See pick <span class="chevron">›</span></a>
+          <a class="btn-secondary" href="https://amzn.to/3K8dqKp" target="_blank" rel="nofollow sponsored noopener"
+             data-track="affiliate" data-product="ordinary_ha" data-destination="amazon" data-placement="quick_picks">
+            Check price
+          </a>
+        </div>
+      </div>
+
+      <div class="quick-pick-card">
+        <h3>Quick pick: Fine lines + dehydration</h3>
+        <p>More “cosmetic elegant” feel. Often chosen when skin looks tired and dehydrated.</p>
+        <div class="quick-pick-links">
+          <a class="btn-primary" href="#lrp-hyalu-b5" data-track="jump" data-placement="quick_picks" data-label="lrp_row">See pick <span class="chevron">›</span></a>
+          <a class="btn-secondary" href="https://amzn.to/49hZyaK" target="_blank" rel="nofollow sponsored noopener"
+             data-track="affiliate" data-product="lrp_hyalu_b5" data-destination="amazon" data-placement="quick_picks">
+            Check price
+          </a>
+        </div>
+      </div>
+
+      <div class="quick-pick-card">
+        <h3>Quick pick: Best for layering</h3>
+        <p>Fast-absorbing gel texture under sunscreen/makeup. Simple hydration booster.</p>
+        <div class="quick-pick-links">
+          <a class="btn-primary" href="#vichy-89" data-track="jump" data-placement="quick_picks" data-label="vichy_row">See pick <span class="chevron">›</span></a>
+          <a class="btn-secondary" href="https://amzn.to/4riD6VA" target="_blank" rel="nofollow sponsored noopener"
+             data-track="affiliate" data-product="vichy_89" data-destination="amazon" data-placement="quick_picks">
+            Check price
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compact sticky jump nav -->
+    <nav class="jump-nav" aria-label="Jump to a product">
+      <a href="#compare" data-track="jump" data-placement="jump_nav" data-label="to_table">Table</a>
+      <a href="#cerave-ha" data-track="jump" data-placement="jump_nav" data-label="cerave">CeraVe</a>
+      <a href="#ordinary-ha" data-track="jump" data-placement="jump_nav" data-label="ordinary">The Ordinary</a>
+      <a href="#lrp-hyalu-b5" data-track="jump" data-placement="jump_nav" data-label="lrp">LRP</a>
+      <a href="#vichy-89" data-track="jump" data-placement="jump_nav" data-label="vichy">Vichy</a>
+      <a href="#faq" data-track="jump" data-placement="jump_nav" data-label="faq">FAQ</a>
+    </nav>
+
     <!-- COMPARISON TABLE -->
-    <section id="compare" aria-labelledby="compare-heading">
-      <h2 id="compare-heading" class="section-title">
-        Top hyaluronic acid serums – side by side
-      </h2>
+    <section id="compare" class="anchor-offset" aria-labelledby="compare-heading">
+      <h2 id="compare-heading" class="section-title">Top hyaluronic acid serums — side by side</h2>
       <p class="section-subtitle">
-        Ratings are based on formula quality, hydration profile, texture, price per ml and real-world feedback.
-        We may earn a commission when you buy via our links – at no extra cost to you.
+        Ratings consider formula quality, hydration profile, texture, price per ml and real-world feedback.
+        We may earn a commission when you buy via links — at no extra cost to you.
         Want to go deeper? Read our
-        <a href="/best-for-beginners.html">Best serums for beginners</a>,
-        <a href="/hyaluronic-guide.html">Beginner hyaluronic guide</a>,
-        <a href="/strong-hyaluronic-guide.html">advanced HA guide</a>,
-        <a href="/hyaluronic-vs-glycerin.html">hyaluronic vs glycerin guide</a> and
-        <a href="/side-effects.html">side effects & mistakes</a>.
+        <a href="/best-for-beginners.html" data-track="internal" data-placement="intro" data-label="beginners">best serums for beginners</a>,
+        <a href="/hyaluronic-guide.html" data-track="internal" data-placement="intro" data-label="ha_guide">hyaluronic guide</a>,
+        <a href="/strong-hyaluronic-guide.html" data-track="internal" data-placement="intro" data-label="advanced">advanced HA guide</a>,
+        <a href="/hyaluronic-vs-glycerin.html" data-track="internal" data-placement="intro" data-label="ha_vs_glycerin">HA vs glycerin</a> and
+        <a href="/side-effects.html" data-track="internal" data-placement="intro" data-label="side_effects">mistakes & side effects</a>.
       </p>
 
       <div class="table-wrapper">
         <table>
           <thead>
-          <tr>
-            <th scope="col">Shop</th>
-            <th scope="col">Product</th>
-            <th scope="col">Best for</th>
-            <th scope="col">Texture</th>
-            <th scope="col">Key ingredients</th>
-            <th scope="col">Our rating</th>
-            <th scope="col">Price*</th>
-          </tr>
+            <tr>
+              <th scope="col">Shop</th>
+              <th scope="col">Product</th>
+              <th scope="col">Best for</th>
+              <th scope="col">Texture</th>
+              <th scope="col">Key ingredients</th>
+              <th scope="col">Our rating</th>
+              <th scope="col">Price*</th>
+            </tr>
           </thead>
+
           <tbody>
 
-          <!-- CeraVe -->
-          <tr id="cerave-ha">
-            <td class="buy-col">
-              <a href="https://amzn.to/3XDAKmh"
-                 class="btn-compare" rel="nofollow sponsored" target="_blank">
-                View offer
-              </a>
-            </td>
-            <td class="brand-col">
-              CeraVe Hydrating Hyaluronic Acid Serum
-              <div class="badge-top">Best for dry skin</div>
-            </td>
-            <td><span class="pill-skin">Normal · dry · tight-feeling skin</span></td>
-            <td><span class="pill-strength">Creamy gel · non-sticky</span></td>
-            <td>
-              Hyaluronic acid, ceramides, vitamin B5.<br />
-              Fragrance-free, barrier-supporting formula.
-            </td>
-            <td>
-              <div class="stars">★★★★★</div>
-              <div class="rating-score">4.9 / 5 hydration score</div>
-            </td>
-            <td>
-              <div class="price">~$19</div>
-              <div class="price-note">≈ $0.63 per ml</div>
-            </td>
-          </tr>
+            <!-- CeraVe -->
+            <tr id="cerave-ha" class="anchor-offset">
+              <td class="buy-col">
+                <div class="buy-actions">
+                  <a href="https://amzn.to/3XDAKmh"
+                     class="btn-primary"
+                     rel="nofollow sponsored noopener"
+                     target="_blank"
+                     data-track="affiliate"
+                     data-product="cerave_ha"
+                     data-destination="amazon"
+                     data-placement="table"
+                     aria-label="Check price for CeraVe Hydrating Hyaluronic Acid Serum on Amazon">
+                    Check price <span class="chevron">›</span>
+                  </a>
+                  <a href="#cerave-notes" class="btn-secondary"
+                     data-track="jump" data-placement="table" data-label="cerave_notes"
+                     aria-label="Jump to CeraVe notes">
+                    Notes
+                  </a>
+                </div>
+                <span class="offer-sub">Amazon (affiliate)</span>
+              </td>
 
-          <!-- The Ordinary -->
-          <tr id="ordinary-ha">
-            <td class="buy-col">
-              <a href="https://amzn.to/3K8dqKp"
-                 class="btn-compare" rel="nofollow sponsored" target="_blank">
-                View offer
-              </a>
-            </td>
-            <td class="brand-col">
-              The Ordinary Hyaluronic Acid 2% + B5
-              <div class="badge-top">Best budget option</div>
-            </td>
-            <td><span class="pill-skin">Most skin types · dehydrated</span></td>
-            <td><span class="pill-strength">Lightweight serum</span></td>
-            <td>
-              Multi-molecular hyaluronic acid, pro-vitamin B5.<br />
-              Ideal as a first step into hydrating serums.
-            </td>
-            <td>
-              <div class="stars">★★★★☆</div>
-              <div class="rating-score">4.3 / 5 hydration score</div>
-            </td>
-            <td>
-              <div class="price">~$8</div>
-              <div class="price-note">≈ $0.27 per ml</div>
-            </td>
-          </tr>
+              <td class="brand-col">
+                CeraVe Hydrating Hyaluronic Acid Serum
+                <div class="badge-top">Top pick: Dry skin</div>
+              </td>
 
-          <!-- LRP Hyalu B5 -->
-          <tr id="lrp-hyalu-b5">
-            <td class="buy-col">
-              <a href="https://amzn.to/49hZyaK"
-                 class="btn-compare" rel="nofollow sponsored" target="_blank">
-                View offer
-              </a>
-            </td>
-            <td class="brand-col">
-              La Roche-Posay Hyalu B5 Serum
-              <div class="badge-top">Best for fine lines + dehydration</div>
-            </td>
-            <td><span class="pill-skin">Normal · combination · early ageing</span></td>
-            <td><span class="pill-strength">Bouncy gel-serum</span></td>
-            <td>
-              Hyaluronic acid, vitamin B5, madecassoside.<br />
-              Plumps fine lines and soothes dryness.
-            </td>
-            <td>
-              <div class="stars">★★★★☆</div>
-              <div class="rating-score">4.5 / 5 hydration score</div>
-            </td>
-            <td>
-              <div class="price">~$32</div>
-              <div class="price-note">≈ $1.06 per ml</div>
-            </td>
-          </tr>
+              <td><span class="pill-skin">Normal · dry · tight-feeling skin</span></td>
+              <td><span class="pill-strength">Creamy gel · lower stickiness</span></td>
+              <td>
+                Hyaluronic acid, ceramides, vitamin B5.<br />
+                Fragrance-free, barrier-supporting formula.
+              </td>
+              <td>
+                <div class="stars">★★★★★</div>
+                <div class="rating-score">4.8 / 5 hydration score</div>
+              </td>
+              <td>
+                <div class="price">~$19</div>
+                <div class="price-note">≈ $0.63 per ml</div>
+              </td>
+            </tr>
 
-          <!-- Vichy Mineral 89 -->
-          <tr id="vichy-89">
-            <td class="buy-col">
-              <a href="https://amzn.to/4riD6VA"
-                 class="btn-compare" rel="nofollow sponsored" target="_blank">
-                View offer
-              </a>
-            </td>
-            <td class="brand-col">
-              Vichy Minéral 89 Hyaluronic Acid Booster
-              <div class="badge-top">Best for layering</div>
-            </td>
-            <td><span class="pill-skin">All skin types · dullness</span></td>
-            <td><span class="pill-strength">Watery gel · absorbs fast</span></td>
-            <td>
-              Hyaluronic acid, Vichy mineral-rich water.<br />
-              Great under other serums and makeup.
-            </td>
-            <td>
-              <div class="stars">★★★★☆</div>
-              <div class="rating-score">4.4 / 5 hydration score</div>
-            </td>
-            <td>
-              <div class="price">~$19</div>
-              <div class="price-note">≈ $0.63 per ml</div>
-            </td>
-          </tr>
+            <!-- The Ordinary -->
+            <tr id="ordinary-ha" class="anchor-offset">
+              <td class="buy-col">
+                <div class="buy-actions">
+                  <a href="https://amzn.to/3K8dqKp"
+                     class="btn-primary"
+                     rel="nofollow sponsored noopener"
+                     target="_blank"
+                     data-track="affiliate"
+                     data-product="ordinary_ha"
+                     data-destination="amazon"
+                     data-placement="table"
+                     aria-label="Check price for The Ordinary Hyaluronic Acid 2% + B5 on Amazon">
+                    Check price <span class="chevron">›</span>
+                  </a>
+                  <a href="#ordinary-notes" class="btn-secondary"
+                     data-track="jump" data-placement="table" data-label="ordinary_notes"
+                     aria-label="Jump to The Ordinary notes">
+                    Notes
+                  </a>
+                </div>
+                <span class="offer-sub">Amazon (affiliate)</span>
+              </td>
+
+              <td class="brand-col">
+                The Ordinary Hyaluronic Acid 2% + B5
+                <div class="badge-top">Top pick: Budget</div>
+              </td>
+
+              <td><span class="pill-skin">Most skin types · dehydrated</span></td>
+              <td><span class="pill-strength">Light serum · can feel tacky</span></td>
+              <td>
+                Multi-molecular HA, pro-vitamin B5.<br />
+                Great value; technique matters (apply damp + seal).
+              </td>
+              <td>
+                <div class="stars">★★★★☆</div>
+                <div class="rating-score">4.3 / 5 hydration score</div>
+              </td>
+              <td>
+                <div class="price">~$8</div>
+                <div class="price-note">≈ $0.27 per ml</div>
+              </td>
+            </tr>
+
+            <!-- LRP -->
+            <tr id="lrp-hyalu-b5" class="anchor-offset">
+              <td class="buy-col">
+                <div class="buy-actions">
+                  <a href="https://amzn.to/49hZyaK"
+                     class="btn-primary"
+                     rel="nofollow sponsored noopener"
+                     target="_blank"
+                     data-track="affiliate"
+                     data-product="lrp_hyalu_b5"
+                     data-destination="amazon"
+                     data-placement="table"
+                     aria-label="Check price for La Roche-Posay Hyalu B5 Serum on Amazon">
+                    Check price <span class="chevron">›</span>
+                  </a>
+                  <a href="#lrp-notes" class="btn-secondary"
+                     data-track="jump" data-placement="table" data-label="lrp_notes"
+                     aria-label="Jump to La Roche-Posay notes">
+                    Notes
+                  </a>
+                </div>
+                <span class="offer-sub">Amazon (affiliate)</span>
+              </td>
+
+              <td class="brand-col">
+                La Roche-Posay Hyalu B5 Serum
+                <div class="badge-top">Top pick: Fine lines</div>
+              </td>
+
+              <td><span class="pill-skin">Normal · combination · early ageing</span></td>
+              <td><span class="pill-strength">Bouncy gel-serum</span></td>
+              <td>
+                HA + vitamin B5 + madecassoside.<br />
+                Plumping feel and comfort focus.
+              </td>
+              <td>
+                <div class="stars">★★★★☆</div>
+                <div class="rating-score">4.5 / 5 hydration score</div>
+              </td>
+              <td>
+                <div class="price">~$32</div>
+                <div class="price-note">≈ $1.06 per ml</div>
+              </td>
+            </tr>
+
+            <!-- Vichy -->
+            <tr id="vichy-89" class="anchor-offset">
+              <td class="buy-col">
+                <div class="buy-actions">
+                  <a href="https://amzn.to/4riD6VA"
+                     class="btn-primary"
+                     rel="nofollow sponsored noopener"
+                     target="_blank"
+                     data-track="affiliate"
+                     data-product="vichy_89"
+                     data-destination="amazon"
+                     data-placement="table"
+                     aria-label="Check price for Vichy Minéral 89 on Amazon">
+                    Check price <span class="chevron">›</span>
+                  </a>
+                  <a href="#vichy-notes" class="btn-secondary"
+                     data-track="jump" data-placement="table" data-label="vichy_notes"
+                     aria-label="Jump to Vichy notes">
+                    Notes
+                  </a>
+                </div>
+                <span class="offer-sub">Amazon (affiliate)</span>
+              </td>
+
+              <td class="brand-col">
+                Vichy Minéral 89 Hyaluronic Acid Booster
+                <div class="badge-top">Top pick: Layering</div>
+              </td>
+
+              <td><span class="pill-skin">All skin types · dullness</span></td>
+              <td><span class="pill-strength">Watery gel · absorbs fast</span></td>
+              <td>
+                HA + mineral-rich water.<br />
+                Simple, fast layer under SPF/makeup.
+              </td>
+              <td>
+                <div class="stars">★★★★☆</div>
+                <div class="rating-score">4.4 / 5 hydration score</div>
+              </td>
+              <td>
+                <div class="price">~$19</div>
+                <div class="price-note">≈ $0.63 per ml</div>
+              </td>
+            </tr>
 
           </tbody>
         </table>
       </div>
+
+      <div class="card" style="margin-top: 16px;">
+        <h2 style="margin-top: 0;">Still unsure?</h2>
+        <p>
+          If HA feels sticky or “drying”, it’s usually technique: apply on slightly damp skin and seal with moisturiser.
+          If your climate is very dry, sealing becomes non-negotiable.
+        </p>
+        <div class="hero-actions" style="margin-top: 10px;">
+          <a class="btn-primary" href="/hyaluronic-guide.html" data-track="internal" data-placement="still_unsure" data-label="ha_guide">
+            Read the HA guide <span class="chevron">›</span>
+          </a>
+          <a class="btn-secondary" href="/hyaluronic-vs-glycerin.html" data-track="internal" data-placement="still_unsure" data-label="ha_vs_glycerin">
+            HA vs glycerin
+          </a>
+          <a class="btn-secondary" href="/side-effects.html" data-track="internal" data-placement="still_unsure" data-label="mistakes">
+            Mistakes & fixes
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes (simple, no ugly table header) -->
+    <section class="grid" aria-label="Product notes" style="margin-top: 18px;">
+      <article id="cerave-notes" class="card anchor-offset">
+        <h2>CeraVe (dry skin pick) — why it works</h2>
+        <p>
+          This is often the “comfort” option: HA + supportive barrier ingredients. If you get tightness easily, this is usually the safest start.
+        </p>
+        <a class="btn-primary" href="https://amzn.to/3XDAKmh" target="_blank" rel="nofollow sponsored noopener"
+           data-track="affiliate" data-product="cerave_ha" data-destination="amazon" data-placement="notes">
+          Check price <span class="chevron">›</span>
+        </a>
+      </article>
+
+      <article id="ordinary-notes" class="card anchor-offset">
+        <h2>The Ordinary (budget pick) — what to watch</h2>
+        <p>
+          Great value, but can feel tacky on dry skin if you apply too much or skip moisturiser. Use a small amount on damp skin.
+        </p>
+        <a class="btn-primary" href="https://amzn.to/3K8dqKp" target="_blank" rel="nofollow sponsored noopener"
+           data-track="affiliate" data-product="ordinary_ha" data-destination="amazon" data-placement="notes">
+          Check price <span class="chevron">›</span>
+        </a>
+      </article>
+
+      <article id="lrp-notes" class="card anchor-offset">
+        <h2>LRP Hyalu B5 (fine lines + dehydration)</h2>
+        <p>
+          If your goal is “plump + smooth” and you like a more elegant gel texture, this is a common upgrade — but higher cost per ml.
+        </p>
+        <a class="btn-primary" href="https://amzn.to/49hZyaK" target="_blank" rel="nofollow sponsored noopener"
+           data-track="affiliate" data-product="lrp_hyalu_b5" data-destination="amazon" data-placement="notes">
+          Check price <span class="chevron">›</span>
+        </a>
+      </article>
+
+      <article id="vichy-notes" class="card anchor-offset">
+        <h2>Vichy 89 (layering pick)</h2>
+        <p>
+          Best when you want a fast, light hydration layer under SPF/makeup. Simple formula; still seal with moisturiser if you’re dry.
+        </p>
+        <a class="btn-primary" href="https://amzn.to/4riD6VA" target="_blank" rel="nofollow sponsored noopener"
+           data-track="affiliate" data-product="vichy_89" data-destination="amazon" data-placement="notes">
+          Check price <span class="chevron">›</span>
+        </a>
+      </article>
     </section>
 
     <!-- GUIDE CARDS -->
-    <section class="grid" aria-label="Guides to hyaluronic acid">
+    <section class="grid" aria-label="Guides to hyaluronic acid" style="margin-top: 18px;">
       <article class="card">
         <h2>New to hyaluronic acid?</h2>
         <p>
-          Start with our beginner-friendly guide and see exactly how to add a hydrating serum
-          to your routine without making your skin feel sticky or overloaded.
+          Start with the beginner guide: how to apply HA correctly, what to combine it with, and what to avoid
+          if you break out or feel sticky.
         </p>
-        <a href="/best-for-beginners.html" class="btn-primary">
-          Best serums for beginners ›
+        <a href="/hyaluronic-guide.html" class="btn-primary" data-track="internal" data-placement="guides" data-label="ha_guide">
+          Hyaluronic acid guide <span class="chevron">›</span>
         </a>
       </article>
 
       <article class="card">
         <h2>Want deeper hydration?</h2>
         <p>
-          Learn about different molecular weights of HA, layering strategies and how to combine
-          hydrating serums with actives like retinoids and vitamin C.
+          Learn layering strategies and how HA compares to glycerin (often underrated) so you can choose the best humectant for your skin.
         </p>
-        <a href="/strong-hyaluronic-guide.html" class="btn-primary">
-          Advanced hyaluronic guide ›
+        <a href="/hyaluronic-vs-glycerin.html" class="btn-primary" data-track="internal" data-placement="guides" data-label="ha_vs_glycerin">
+          HA vs glycerin <span class="chevron">›</span>
         </a>
       </article>
     </section>
 
-    <!-- HELPFUL LINKS SECTION -->
-    <section aria-label="More hyaluronic acid resources" style="margin-top: 24px;">
-      <h2 class="section-title">More hyaluronic acid resources</h2>
-      <p class="section-subtitle">
-        Explore our in-depth guides to understand how HA works, how to use it correctly
-        and which ingredients it pairs best with.
-      </p>
-      <ul style="padding-left: 18px; font-size: 14px; line-height: 1.7;">
-        <li><a href="/hyaluronic-guide.html">Hyaluronic Acid Guide – how it works & who it’s for</a></li>
-        <li><a href="/hyaluronic-vs-glycerin.html">Hyaluronic vs Glycerin – which humectant is better?</a></li>
-        <li><a href="/side-effects.html">Hyaluronic Acid Side Effects & common mistakes</a></li>
-        <li><a href="/about.html">About Hylaronic.com</a></li>
-      </ul>
-    </section>
-
     <!-- MINI FAQ -->
-    <section class="card faq" aria-labelledby="faq-heading" style="margin-top: 24px;">
+    <section id="faq" class="card faq anchor-offset" aria-labelledby="faq-heading" style="margin-top: 24px;">
       <h2 id="faq-heading" class="section-title">Hyaluronic Acid FAQ</h2>
 
       <h3>Can hyaluronic acid make my skin drier?</h3>
       <p>
-        It can feel that way if you apply it on completely dry skin and skip moisturiser.
-        For best results, apply HA on slightly damp skin and always follow with a cream to lock in water.
+        It can feel that way if you apply it on completely dry skin and skip moisturiser. For best results,
+        apply HA on slightly damp skin and follow with a moisturiser to lock water in.
       </p>
 
       <h3>Can I use hyaluronic acid every day?</h3>
       <p>
-        Yes – most people can use hyaluronic serums once or twice daily.
-        If a product feels sticky, pills or causes breakouts, it’s usually the overall formula, not HA itself.
+        Yes. Most people can use HA once or twice daily. If a product pills, feels sticky or breaks you out,
+        it’s usually the overall formula or application amount — not HA itself.
       </p>
 
       <h3>Do I still need moisturiser if I use a hyaluronic serum?</h3>
       <p>
-        Yes. Hyaluronic acid is a <em>humectant</em> (water binder), not an occlusive.
-        You still need a moisturiser on top to seal the hydration into the skin.
+        Yes. HA is a humectant (water binder), not an occlusive. You still need a moisturiser on top to seal hydration in.
       </p>
     </section>
 
@@ -348,38 +694,86 @@
   </main>
 
   <footer class="site-footer">
-  <span>© <span id="year"></span> Hylaronic.com – Independent hyaluronic acid reviews &amp; comparisons.</span>
-  <span>Operated by ronarn AS, Norway. Affiliate-supported but independent. No paid rankings.</span>
-  <span>Contact: <a href="mailto:info@hylaronic.com">info@hylaronic.com</a></span>
-  <span>Business address: Pb. 1010 Lillestrøm Syd, 2012 Lillestrøm, Norway</span>
+    <span>© <span id="year"></span> Hylaronic.com – Independent hyaluronic acid reviews &amp; comparisons.</span>
+    <span>Operated by ronarn AS, Norway. Affiliate-supported but independent. No paid rankings.</span>
+    <span>Contact: <a href="mailto:info@hylaronic.com">info@hylaronic.com</a></span>
+    <span>Business address: Pb. 1010 Lillestrøm Syd, 2012 Lillestrøm, Norway</span>
 
-  <span class="footer-links">
-    <a href="/privacy.html">Privacy Policy</a> ·
-    <a href="/affiliate-disclosure.html">Affiliate Disclosure</a> ·
-    <a href="/about.html">About Hylaronic.com</a> ·
-    <a href="https://hyaluronic.bio" target="_blank" rel="noopener">Hyaluronic.bio – Ingredient education</a> ·
-    <a href="https://organization.bio" target="_blank" rel="noopener">About the Publisher</a> ·
-    <a href="https://contactus.bio" target="_blank" rel="noopener">Contact</a> ·
-    <a href="https://affiliates.bio" target="_blank" rel="noopener">Affiliates</a> ·
-    <a href="https://advertisement.bio" target="_blank" rel="noopener">Advertisements</a> ·
-    <a href="https://guides.bio" target="_blank" rel="noopener">Guides</a> ·
-    <a href="https://policies.bio" target="_blank" rel="noopener">Policies</a> ·
-    <a href="https://transparency.bio" target="_blank" rel="noopener">Transparency</a> ·
-    <a href="https://ethics.bio" target="_blank" rel="noopener">Ethics</a> ·
-    <a href="https://standards.bio" target="_blank" rel="noopener">Standards</a> ·
-    <a href="https://audits.bio" target="_blank" rel="noopener">Audits</a> ·
-    <a href="https://verification.bio" target="_blank" rel="noopener">Verification</a> ·
-    <a href="https://indexing.bio" target="_blank" rel="noopener">Indexing</a> ·
-    <a href="https://disclaimer.bio" target="_blank" rel="noopener">Disclaimer</a> ·
-    <a href="https://disclosure.bio" target="_blank" rel="noopener">Disclosure</a> ·
-    <a href="https://terms.bio" target="_blank" rel="noopener">Terms</a>
-  </span>
-</footer>
+    <span class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a> ·
+      <a href="/affiliate-disclosure.html">Affiliate Disclosure</a> ·
+      <a href="/about.html">About Hylaronic.com</a> ·
+      <a href="https://hyaluronic.bio" target="_blank" rel="noopener">Hyaluronic.bio – Ingredient education</a> ·
+      <a href="https://organization.bio" target="_blank" rel="noopener">About the Publisher</a> ·
+      <a href="https://contactus.bio" target="_blank" rel="noopener">Contact</a> ·
+      <a href="https://affiliates.bio" target="_blank" rel="noopener">Affiliates</a> ·
+      <a href="https://advertisement.bio" target="_blank" rel="noopener">Advertisements</a> ·
+      <a href="https://guides.bio" target="_blank" rel="noopener">Guides</a> ·
+      <a href="https://policies.bio" target="_blank" rel="noopener">Policies</a> ·
+      <a href="https://transparency.bio" target="_blank" rel="noopener">Transparency</a> ·
+      <a href="https://ethics.bio" target="_blank" rel="noopener">Ethics</a> ·
+      <a href="https://standards.bio" target="_blank" rel="noopener">Standards</a> ·
+      <a href="https://audits.bio" target="_blank" rel="noopener">Audits</a> ·
+      <a href="https://verification.bio" target="_blank" rel="noopener">Verification</a> ·
+      <a href="https://indexing.bio" target="_blank" rel="noopener">Indexing</a> ·
+      <a href="https://disclaimer.bio" target="_blank" rel="noopener">Disclaimer</a> ·
+      <a href="https://disclosure.bio" target="_blank" rel="noopener">Disclosure</a> ·
+      <a href="https://terms.bio" target="_blank" rel="noopener">Terms</a>
+    </span>
+  </footer>
 
 </div>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Optional click tracking (safe)
+  (function () {
+    function safeGtag(){ return (typeof window.gtag === "function"); }
+    function fireEvent(name, params){
+      if (!safeGtag()) return;
+      try { window.gtag("event", name, params || {}); } catch(e){}
+    }
+
+    document.addEventListener("click", function(e){
+      const a = e.target.closest && e.target.closest("a");
+      if (!a) return;
+
+      const href = a.getAttribute("href") || "";
+      const trackType = a.getAttribute("data-track") || "";
+      const placement = a.getAttribute("data-placement") || "unknown";
+      const label = a.getAttribute("data-label") || "";
+      const product = a.getAttribute("data-product") || "";
+      const destination = a.getAttribute("data-destination") || "";
+
+      if (trackType === "affiliate") {
+        fireEvent("affiliate_click", {
+          product: product || "unknown",
+          placement: placement,
+          destination: destination || "unknown",
+          link_text: (a.textContent || "").trim().slice(0, 80)
+        });
+        return;
+      }
+
+      const isOutbound = href.startsWith("http://") || href.startsWith("https://") || href.startsWith("//");
+      const isSameDomain = href.includes("hylaronic.com") || href.startsWith("/") || href.startsWith("#");
+
+      if ((trackType === "outbound") || (isOutbound && !isSameDomain && !href.includes("hylaronic.com"))) {
+        fireEvent("outbound_click", { placement: placement, label: label || "outbound", url: href });
+        return;
+      }
+
+      if (trackType === "jump") {
+        fireEvent("jump_click", { placement: placement, label: label || href });
+        return;
+      }
+
+      if (trackType === "internal") {
+        fireEvent("internal_click", { placement: placement, label: label || href });
+      }
+    }, { passive: true });
+  })();
 </script>
 </body>
 </html>
